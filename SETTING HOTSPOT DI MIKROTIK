@@ -1,0 +1,27 @@
+# SETTING-HOTSPOT-DI-MIKROTIK-
+SETTING HOSPOT 
+Berikut langkah-langkah setting Hotspot di MikroTik (singkat & berurutan):
+Login MikroTik
+Masuk via Winbox/WebFig, hubungkan ke router.
+Siapkan Interface
+Tentukan interface Internet (WAN) dan Hotspot (LAN/WLAN).
+IP Address LAN
+IP → Addresses → +
+Contoh: 192.168.10.1/24 pada interface Hotspot.
+DHCP Server
+IP → DHCP Server → DHCP Setup
+Pilih interface Hotspot → Next sampai selesai.
+DNS
+IP → DNS
+Centang Allow Remote Requests, isi DNS (misal: 8.8.8.8).
+NAT (Internet Sharing)
+IP → Firewall → NAT → +
+Chain: srcnat
+Out Interface: WAN
+Action: masquerade
+Hotspot Setup
+IP → Hotspot → Hotspot Setup
+Pilih interface Hotspot → Next sampai selesai (buat user & password).
+Coba Koneksi
+Sambungkan client → buka browser → login Hotspot.
+✅ Hotspot berhasil aktif
